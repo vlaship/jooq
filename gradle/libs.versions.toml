@@ -1,0 +1,19 @@
+[versions]
+mapstructVersion = "1.5.5.Final"
+jooqVersion = "3.19.1"
+preLiquibaseVersion = "1.5.0"
+springBootVersion = "3.2.1"
+springDependencyManagementVersion = "1.1.4"
+
+[libraries]
+mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "mapstructVersion" }
+mapstruct-processor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstructVersion" }
+jooq = { module = "org.jooq:jooq", version.ref = "jooqVersion" }
+preLiquibase = { module = "net.lbruun.springboot:preliquibase-spring-boot-starter", version.ref = "preLiquibaseVersion" }
+jooqMetaExtensionsLiquibase = { module = "org.jooq:jooq-meta-extensions-liquibase", version.ref = "jooqVersion" }
+
+[plugins]
+git-properties = { id = "com.gorylenko.gradle-git-properties", version = "2.4.1" }
+jooq = { id = "org.jooq.jooq-codegen-gradle", version.ref = "jooqVersion" }
+springBoot = { id = "org.springframework.boot", version.ref = "springBootVersion" }
+springDependencyManagement = { id = "io.spring.dependency-management", version.ref = "springDependencyManagementVersion" }

@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/2023/20231228_01_create_authors.yml
+  - include:
+      file: db/changelog/2023/20231228_02_create_articles.yml
