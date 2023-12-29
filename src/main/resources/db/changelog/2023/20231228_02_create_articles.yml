@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20231228_02_01
+      author: vlaship
+      changes:
+        - createTable:
+            tableName: articles
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: desc
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 20231228_02_02
+      author: vlaship
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: articles
+            baseColumnNames: author_id
+            constraintName: fk_articles_author_id
+            referencedTableName: authors
+            referencedColumnNames: id
